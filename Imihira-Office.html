@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Imihira Office
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="veiwport" content="width=device-with, inital-scale=1.0">
+    <link rel="icon" href="Resources/icon.png">
+
+    <style>
+        body {
+            margin: 0px;
+            font-family: Candara, Arial, sans-serif;
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        #title {
+            font-size: 60px;
+            padding: 20px;
+            color: rgb(250, 250, 250);
+            background-color: rgb(70, 70, 170);
+        }
+
+        #user-display {
+            font-size: 20px;
+            color: rgb(250, 250, 250);
+            background-color: rgb(50, 50, 100);
+            padding: 10px;
+        }
+
+        #text-control,
+        #file-menu {
+            background-color: rgb(150, 150, 150);
+            color: rgb(50, 50, 100);
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        #file-menu span,
+        #text-control span {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .button:hover {
+            color: rgb(100, 100, 200);
+        }
+
+        #page {
+            width: 500px;
+            font-family: Arial;
+            resize: vertical;
+        }
+
+        #page-container {
+            text-align: center;
+        }
+
+        #font-size,
+        #font {
+            background-color: rgb(150, 150, 150);
+            border: none;
+            font-size: 18px;
+            font-family: Candara, Arial, sans-serif;
+            color: rgb(50, 50, 100);
+        }
+
+        #font-size:hover,
+        #font:hover {
+            color: rgb(100, 100, 200);
+        }
+
+        #font-size option,
+        #font option {
+            color: rgb(50, 50, 100);
+        }
+    </style>
+
+    <script src="Scripts/Imihira-Office.js"></script>
+
+</head>
+
+<body onload="document.getElementById('page').value = 'Welcome to Imihira Office!'">
+    <div id="header">
+        <div id="title">Imihira Office</div>
+
+        <div id="user-display">Not Signed In</div>
+
+        <div id="file-menu">
+            <span id="sign" class="button" onclick="sign()">Sign In</span>
+            <span id="new" class="button" onclick="newFile()">New</span>
+            <span id="save" class="button" onclick="save()">Save</span>
+            <span id="load" class="button" onclick="load()">Open</span>
+            <span id="recover" class="button" onclick="recover()">Recover Files</span>
+        </div>
+        <hr style="margin: 0px; color: rgb(130, 130, 130)">
+        <div id="text-control">
+            <span id="spellcheck" class="button" onclick="toggleSpellCheck()">Spellcheck: On</span><span
+                id="font-select">Font:
+                <select id="font" onchange="updateFont()">
+                    <option value="Arial">Arial</option>
+                    <option value="Times">Times</option>
+                    <option value="Candara">Candara</option>
+                </select></span><span id="font-size-select">Font Size: <select id="font-size" onchange="updateFont()">
+                    <option value="12px">12</option>
+                    <option value="14px">14</option>
+                    <option value="16px">16</option>
+                    <option value="18px">18</option>
+                    <option value="20px">20</option>
+                    <option value="22px">22</option>
+                    <option value="24px">24</option>
+                    <option value="26px">26</option>
+                    <option value="28px">28</option>
+                    <option value="30px">30</option>
+                </select></span>
+        </div>
+    </div>
+
+    <div id="page-containter">
+        <textarea id="page" onkeyup="unsave()"></textarea>
+        <!--<div contenteditable>Hullo</div>-->
+    </div>
+</body>
+
+</html>
